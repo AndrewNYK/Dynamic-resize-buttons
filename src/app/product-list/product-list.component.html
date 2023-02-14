@@ -1,0 +1,32 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <!-- ngStyle use to dynamically utilize max length -->
+  <button
+    [ngStyle]="{
+      'background-color': 'green',
+      width: max_length * 8 + 'px',
+      display: 'flex',
+      'align-items': 'center',
+      'justify-content': 'center'
+    }"
+    class="max_width_button"
+    (click)="share()"
+  >
+    {{ product.button_description }}
+  </button>
+</div>
+
+<p>{{ max_length }}</p>
+<p>{{ scale }}</p>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
