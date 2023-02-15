@@ -7,13 +7,13 @@ import { products } from '../products';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent implements OnInit, OnChanges {
+export class ProductListComponent implements OnInit {
   products = products;
   max_length: number = 0;
-  scale: number = 0;
+  // scale: number = 0;
 
   ngOnInit(): void {
-    this.scale = window.innerWidth / window.innerHeight;
+    // this.scale = window.innerWidth / window.innerHeight;
     for (var product of products) {
       if (product.button_description.length > this.max_length) {
         this.max_length = product.button_description.length;
@@ -21,9 +21,9 @@ export class ProductListComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnChanges(): void {
-    this.scale = window.innerWidth / window.innerHeight;
-  }
+  // ngOnChanges(): void {
+  //   this.scale = window.innerWidth / window.innerHeight;
+  // }
 
   share() {
     window.alert('The product has been shared!');
