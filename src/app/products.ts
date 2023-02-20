@@ -9,13 +9,19 @@ export const products = [
     name: 'Phone Mini',
     price: 699,
     description: 'A great phone with one of the best cameras',
-    button_description: 'Medium word',
+    button_description: 'So Medium word',
   },
   {
     name: 'Phone Standard',
     price: 299,
     description: '',
-    button_description: 'This is a long word',
+    button_description: 'This is a long phrase',
+  },
+  {
+    name: 'IPad',
+    price: 0,
+    description: 'Cool unique phone',
+    button_description: 'This is a way longer sentence than expected',
   },
 ];
 

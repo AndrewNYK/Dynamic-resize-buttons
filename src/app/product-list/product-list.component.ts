@@ -99,15 +99,15 @@ export class ProductListComponent implements OnInit {
   getButtonClass(buttonColour: string) {
     switch (buttonColour.toLowerCase()) {
       case 'blue':
-        return 'btn btn-primary';
+        return 'btn btn-primary btn-sm';
       case 'red':
-        return 'btn btn-danger';
+        return 'btn btn-danger btn-sm';
       case 'green':
         return 'btn btn-success';
       case 'yellow':
-        return 'btn btn-warning';
-      default:
         return 'btn btn-info';
+      default:
+        return 'btn btn-dark';
     }
   }
 
