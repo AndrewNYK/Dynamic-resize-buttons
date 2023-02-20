@@ -8,19 +8,23 @@
   </h3>
   <p *ngIf="product.description">Description: {{ product.description }}</p>
   <!-- ngStyle use to dynamically utilize max length -->
-  <button
-    [ngStyle]="{
-      'background-color': 'green',
-      width: max_length * scale + 'px',
-      display: 'flex',
-      'align-items': 'center',
-      'justify-content': 'center'
-    }"
-    class="max_width_button"
-    (click)="share()"
-  >
-    {{ product.button_description }}
-  </button>
+
+  <!-- size-detector.component.html -->
+  <div *ngFor="let s of sizes" class="{{ s.css + ' ' + (prefix + s.id) }}">
+    <button
+      [ngStyle]="{
+        width: max_length * s.scale + 'px',
+        'min-width': '50px',
+        display: 'flex',
+        'align-items': 'center',
+        'justify-content': 'center'
+      }"
+      [ngClass]="getButtonClass(s.buttonColour)"
+      (click)="share()"
+    >
+      {{ product.button_description }}
+    </button>
+  </div>
 </div>
 
 <p>{{ max_length }}</p>
