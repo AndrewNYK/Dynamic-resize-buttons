@@ -14,6 +14,7 @@ import { ResizeService } from '../services/resize.services';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
+  providers: [ResizeService]
 })
 export class ProductListComponent implements OnInit {
   products = products;

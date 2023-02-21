@@ -12,6 +12,7 @@ import { ResizeService } from '../services/resize.services';
   selector: 'app-size-detector',
   templateUrl: './size-detector.component.html',
   styleUrls: ['./size-detector.component.css'],
+  providers: [ResizeService],
 })
 export class SizeDetectorComponent implements AfterViewInit {
   prefix = 'is-';
