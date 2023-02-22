@@ -11,7 +11,7 @@
 
   <!-- size-detector.component.html -->
   <div *ngFor="let s of sizes" class="{{ s.css + ' ' + (prefix + s.id) }}">
-    <button
+    <!-- <button
       [ngStyle]="{
         width: max_length * s.scale + 'px',
         'min-width': '50px',
@@ -23,7 +23,21 @@
       (click)="share()"
     >
       {{ product.button_description }}
-    </button>
+    </button> -->
+    <a
+      href="#link"
+      [ngStyle]="{
+        width: max_length * s.scale + 'px',
+        'min-width': '50px',
+        display: 'flex',
+        'align-items': 'center',
+        'justify-content': 'center'
+      }"
+      [ngClass]="getButtonClass(s.buttonColour)"
+      (click)="share()"
+      role="button"
+      >{{ product.button_description }}
+    </a>
   </div>
 </div>
 
