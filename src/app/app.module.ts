@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ResizeService } from './services/resize.services';
 import { SizeDetectorComponent } from './size-detector/size-detector.component';
 import { DropdownMenu1Component } from './dropdown-menu-1/dropdown-menu-1.component';
+import { DropdownMultiLevelComponent } from './dropdown-multi-level/dropdown-multi-level.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { DropdownMenu1Component } from './dropdown-menu-1/dropdown-menu-1.compon
     ProductListComponent,
     SizeDetectorComponent,
     DropdownMenu1Component,
+    DropdownMultiLevelComponent,
   ],
   bootstrap: [AppComponent],
   providers: [ResizeService],
