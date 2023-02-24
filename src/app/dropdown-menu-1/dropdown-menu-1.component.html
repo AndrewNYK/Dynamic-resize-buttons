@@ -1,0 +1,10 @@
+<H3>Dropdown with sub catergories</H3>
+<hr>
+
+<select name="cars" id="cars">
+  <optgroup *ngFor="let item of optGroups" label="{{ item.name }}">
+    <option *ngFor="let sub of item.data" value="{{ sub.value }}">
+      {{ sub.text }}
+    </option>
+  </optgroup>
+</select>
