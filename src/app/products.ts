@@ -15,13 +15,14 @@ export const products = [
     name: 'Phone Standard',
     price: 299,
     description: '',
-    button_description: 'This is a long phrase',
+    button_description: 'This is a long phrase.',
   },
   {
     name: 'IPad',
     price: 0,
     description: 'Cool unique phone',
-    button_description: 'This is a way longer sentence than expected',
+    button_description:
+      'This is a way longer sentence than expected. Second Sentence to make it longer.',
   },
 ];
 

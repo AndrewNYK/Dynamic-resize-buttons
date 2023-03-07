@@ -104,11 +104,11 @@ export class ProductListComponent implements OnInit {
       case 'red':
         return 'btn btn-danger btn-sm';
       case 'green':
-        return 'btn btn-success';
+        return 'btn btn-success btn-sm';
       case 'yellow':
-        return 'btn btn-info';
+        return 'btn btn-info btn-sm';
       default:
-        return 'btn btn-dark';
+        return 'btn btn-dark btn-sm';
     }
   }
 
