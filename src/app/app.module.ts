@@ -10,6 +10,7 @@ import { ResizeService } from './services/resize.services';
 import { SizeDetectorComponent } from './size-detector/size-detector.component';
 import { DropdownMenu1Component } from './dropdown-menu-1/dropdown-menu-1.component';
 import { Button1Component } from './button1/button1.component';
+import { MatchHeightDirective } from './directives/match-height.directive';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { Button1Component } from './button1/button1.component';
     SizeDetectorComponent,
     DropdownMenu1Component,
     Button1Component,
+    MatchHeightDirective,
   ],
   bootstrap: [AppComponent],
   providers: [ResizeService],

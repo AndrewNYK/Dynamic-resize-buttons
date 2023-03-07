@@ -1,17 +1,17 @@
 <h2>Products</h2>
+<div myMatchHeight="btn">
+  <ng-container *ngFor="let product of products">
+    <h3>
+      <a [title]="product.name + ' details'">
+        {{ product.name }}
+      </a>
+    </h3>
+    <p *ngIf="product.description">Description: {{ product.description }}</p>
+    <!-- ngStyle use to dynamically utilize max length -->
 
-<ng-container *ngFor="let product of products">
-  <h3>
-    <a [title]="product.name + ' details'">
-      {{ product.name }}
-    </a>
-  </h3>
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
-  <!-- ngStyle use to dynamically utilize max length -->
-
-  <!-- size-detector.component.html -->
-  <div *ngFor="let s of sizes" class="{{ s.css + ' ' + (prefix + s.id) }}">
-    <!-- <button
+    <!-- size-detector.component.html -->
+    <div *ngFor="let s of sizes" class="{{ s.css + ' ' + (prefix + s.id) }}">
+      <!-- <button
       [ngStyle]="{
         width: max_length * s.scale + 'px',
         'min-width': '50px',
@@ -24,21 +24,22 @@
     >
       {{ product.button_description }}
     </button> -->
-    <a
-      href="#link"
-      [ngStyle]="{
-        width: max_length * s.scale + 'px',
-        'min-width': '50px',
-        display: 'flex',
-        'align-items': 'center',
-        'justify-content': 'center'
-      }"
-      [ngClass]="getButtonClass(s.buttonColour)"
-      (click)="share()"
-      role="button"
-      >{{ product.button_description }}
-    </a>
-  </div>
-</ng-container>
+      <a
+        href="#link"
+        [ngStyle]="{
+          width: max_length * s.scale + 'px',
+          'min-width': '50px',
+          display: 'flex',
+          'align-items': 'center',
+          'justify-content': 'center'
+        }"
+        [ngClass]="getButtonClass(s.buttonColour)"
+        (click)="share()"
+        role="button"
+        >{{ product.button_description }}
+      </a>
+    </div>
+  </ng-container>
+</div>
 
 <p>{{ max_length }}</p>

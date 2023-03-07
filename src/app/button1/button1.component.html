@@ -1,23 +1,25 @@
-<ng-container *ngFor="let product of products">
-  <h3>
-    <a [title]="product.name + ' details'">
-      {{ product.name }}
-    </a>
-  </h3>
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
-  <div class="d-grid gap-2 col-6 mx-auto">
-    <a
-      #myIdentifier
-      href="#link"
-      class="btn btn-primary btn-sm"
-      [ngStyle]="{
-        display: 'flex',
-        'align-items': 'center',
-        'justify-content': 'center'
-      }"
-      (click)="share()"
-      role="button"
-      >{{ product.button_description }}
-    </a>
-  </div>
-</ng-container>
+<div myMatchHeight="d-grid">
+  <ng-container *ngFor="let product of products">
+    <h3>
+      <a [title]="product.name + ' details'">
+        {{ product.name }}
+      </a>
+    </h3>
+    <p *ngIf="product.description">Description: {{ product.description }}</p>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a
+        #myIdentifier
+        href="#link"
+        class="btn btn-primary btn-sm"
+        [ngStyle]="{
+          display: 'flex',
+          'align-items': 'center',
+          'justify-content': 'center'
+        }"
+        (click)="share()"
+        role="button"
+        >{{ product.button_description }}
+      </a>
+    </div>
+  </ng-container>
+</div>
