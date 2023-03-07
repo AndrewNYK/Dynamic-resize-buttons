@@ -1,12 +1,13 @@
-<div *ngFor="let product of products">
+<ng-container *ngFor="let product of products">
   <h3>
     <a [title]="product.name + ' details'">
       {{ product.name }}
     </a>
   </h3>
   <p *ngIf="product.description">Description: {{ product.description }}</p>
-  <div class="d-grid gap-2 col-6 mx-auto" #myIdentifier>
+  <div class="d-grid gap-2 col-6 mx-auto">
     <a
+      #myIdentifier
       href="#link"
       class="btn btn-primary btn-sm"
       [ngStyle]="{
@@ -19,4 +20,4 @@
       >{{ product.button_description }}
     </a>
   </div>
-</div>
+</ng-container>
