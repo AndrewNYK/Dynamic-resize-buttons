@@ -1,4 +1,4 @@
-<div myMatchHeight="d-grid">
+<div myMatchHeight="btn">
   <ng-container *ngFor="let product of products">
     <h3>
       <a [title]="product.name + ' details'">
@@ -10,7 +10,7 @@
       <a
         #myIdentifier
         href="#link"
-        class="btn btn-primary btn-sm"
+        [ngClass]="getButtonClass('blue')"
         [ngStyle]="{
           display: 'flex',
           'align-items': 'center',

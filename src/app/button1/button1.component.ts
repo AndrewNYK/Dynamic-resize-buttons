@@ -52,4 +52,19 @@ export class Button1Component implements OnInit, AfterViewInit {
   share() {
     window.alert('The product has been shared!');
   }
+
+  getButtonClass(buttonColour: string) {
+    switch (buttonColour.toLowerCase()) {
+      case 'blue':
+        return 'btn btn-primary btn-sm';
+      case 'red':
+        return 'btn btn-danger btn-sm';
+      case 'green':
+        return 'btn btn-success btn-sm';
+      case 'yellow':
+        return 'btn btn-info btn-sm';
+      default:
+        return 'btn btn-dark btn-sm';
+    }
+  }
 }

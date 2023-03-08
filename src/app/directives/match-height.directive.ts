@@ -14,7 +14,7 @@ import { distinctUntilChanged, auditTime, map } from 'rxjs/operators';
 })
 export class MatchHeightDirective implements AfterViewChecked {
   // class name to match height
-  @Input()
+  @Input('myMatchHeight')
   myMatchHeight: string;
 
   constructor(private el: ElementRef) {
@@ -46,6 +46,7 @@ export class MatchHeightDirective implements AfterViewChecked {
 
     // step 1: find all the child elements with the selected class name
     const children = parent.getElementsByClassName(className);
+    console.log(children);
 
     if (!children) return;
 
