@@ -6,6 +6,9 @@ import {
   HostListener,
 } from '@angular/core';
 
+import { fromEvent } from 'rxjs';
+import { distinctUntilChanged, auditTime, map } from 'rxjs/operators';
+
 @Directive({
   selector: '[myMatchHeight]',
 })
@@ -14,9 +17,17 @@ export class MatchHeightDirective implements AfterViewChecked {
   @Input()
   myMatchHeight: string;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+    fromEvent(window, 'resize')
+      .pipe(
+        auditTime(100),
+        map(() => window.innerWidth),
+        distinctUntilChanged()
+      )
+      .subscribe(() => this.onResize());
+  }
 
-  @HostListener('window:resize')
+  // @HostListener('window:resize')
   onResize() {
     // call our matchHeight function here
     this.matchHeight(this.el.nativeElement, this.myMatchHeight);
