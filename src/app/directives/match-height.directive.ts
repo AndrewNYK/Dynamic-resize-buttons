@@ -20,7 +20,7 @@ export class MatchHeightDirective implements AfterViewChecked {
   constructor(private el: ElementRef) {
     fromEvent(window, 'resize')
       .pipe(
-        auditTime(100),
+        auditTime(10000),
         map(() => window.innerWidth),
         distinctUntilChanged()
       )
@@ -31,6 +31,7 @@ export class MatchHeightDirective implements AfterViewChecked {
   onResize() {
     // call our matchHeight function here
     this.matchHeight(this.el.nativeElement, this.myMatchHeight);
+    console.log(window.innerWidth);
   }
 
   ngAfterViewChecked() {
